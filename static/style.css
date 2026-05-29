@@ -1,0 +1,197 @@
+:root {
+    --senai-red: #E3000F;
+    --senai-black: #1A1A1A;
+    --senai-white: #FFFFFF;
+    --senai-gray: #F4F6F8;
+    --liberada: #27AE60;
+    --bloqueada: #C0392B;
+    --pendencias: #F39C12;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: var(--senai-gray);
+    color: var(--senai-black);
+}
+
+/* Cabeçalho */
+.header-senai {
+    background-color: var(--senai-red);
+    color: var(--senai-white);
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+
+.header-senai h1 {
+    font-size: 28px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* Container Principal */
+.container {
+    width: 100%;
+    max-width: 900px;
+    margin: 30px auto;
+    background: var(--senai-white);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* Painel de Status (Onde mostra se está liberado ou não) */
+.status-panel {
+    text-align: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #EEE;
+}
+
+.status-panel h2 {
+    color: var(--senai-black);
+    margin-bottom: 15px;
+}
+
+.status-box {
+    display: inline-block;
+    padding: 15px 40px;
+    font-size: 24px;
+    font-weight: bold;
+    border-radius: 5px;
+    color: var(--senai-white);
+    text-transform: uppercase;
+    transition: all 0.3s;
+}
+
+/* Cores Dinâmicas do Status */
+.status-box.default { background-color: #7F8C8D; }
+.status-box.liberada { background-color: var(--liberada); box-shadow: 0 0 15px rgba(39, 174, 96, 0.5); }
+.status-box.bloqueada { background-color: var(--bloqueada); box-shadow: 0 0 15px rgba(192, 57, 43, 0.5); }
+.status-box.pendencias { background-color: var(--pendencias); box-shadow: 0 0 15px rgba(243, 156, 18, 0.5); }
+.status-box.erro { background-color: var(--senai-black); }
+
+#placa-display {
+    margin-top: 15px;
+    font-size: 28px;
+    color: var(--senai-black);
+    letter-spacing: 3px;
+    background: #EEE;
+    display: inline-block;
+    padding: 10px 20px;
+    border: 2px solid #CCC;
+    border-radius: 5px;
+}
+
+/* Câmera e Botão */
+.camera-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+#video {
+    width: 100%;
+    max-width: 600px;
+    border: 4px solid var(--senai-black);
+    border-radius: 8px;
+    background-color: #000;
+}
+
+.btn-senai {
+    margin-top: 20px;
+    padding: 15px 40px;
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--senai-white);
+    background-color: var(--senai-red);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.1s;
+    box-shadow: 0 4px 6px rgba(227, 0, 15, 0.3);
+}
+
+.btn-senai:hover { background-color: #B3000C; }
+.btn-senai:active { transform: scale(0.98); }
+.btn-senai:disabled { background-color: #CCC; cursor: not-allowed; box-shadow: none; }
+
+/* Grid de Leitores (Para mostrar os bastidores) */
+.leitores-box h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #555;
+}
+
+.grid-leitores {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.leitor-card {
+    background: #F9F9F9;
+    padding: 15px;
+    border-left: 5px solid var(--senai-red);
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.badge {
+    font-size: 12px;
+    font-weight: bold;
+    color: var(--senai-white);
+    background: var(--senai-black);
+    padding: 4px 8px;
+    border-radius: 3px;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.leitor-card p {
+    font-size: 15px;
+    color: #333;
+    font-family: monospace;
+    word-break: break-all;
+}
+
+/* Container principal do Header */
+.header-senai {
+    width: 100%;
+    padding: 20px 0;
+    background-color: #ff0000; /* Cor vermelha padrão do SENAI, ajuste se necessário */
+    color: white;
+}
+
+/* Centraliza a logo-box e organiza os itens em coluna */
+.header-senai .logo-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* Estiliza o título */
+.header-senai h1 {
+    margin: 0;
+    font-size: 1.8rem;
+    font-family: Arial, sans-serif;
+    text-transform: uppercase;
+}
+
+/* Estiliza a logo do SENAI */
+.header-senai .senai-logo {
+    max-width: 200px;
+    height: auto;
+    margin-top: 15px;
+    /* Filtro opcional: se a logo for preta e você quiser branca no fundo vermelho */
+    /* filter: brightness(0) invert(1); */
+}
