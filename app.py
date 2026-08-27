@@ -11,12 +11,9 @@ app = Flask(__name__)
 
 app.secret_key = "chave_secreta_super_segura_do_senai"
 
-
 os.makedirs('fotos', exist_ok=True)
 
-
 database.criar_banco_e_tabelas()
-
 
 @app.route('/', methods=['GET', 'POST'])
 def login():
